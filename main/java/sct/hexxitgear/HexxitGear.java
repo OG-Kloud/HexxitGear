@@ -35,7 +35,6 @@ import sct.hexxitgear.item.ItemTribalArmor;
 import sct.hexxitgear.net.HGPacketHandler;
 import sct.hexxitgear.setup.HexxitGearConfig;
 import sct.hexxitgear.setup.HexxitGearRegistry;
-import sct.hexxitgear.setup.LangReg;
 import sct.hexxitgear.tick.PlayerTracker;
 import sct.hexxitgear.world.HGWorldGen;
 import cpw.mods.fml.common.Mod;
@@ -94,8 +93,8 @@ public class HexxitGear {
 
         HexxitGearConfig.loadCommonConfig(evt);
 
-  //      HexxitGearConfig.extractLang(new String[]{"en_US"});
-   //     HexxitGearConfig.loadLang();
+        HexxitGearConfig.extractLang(new String[]{"en_US"});
+        HexxitGearConfig.loadLang();
         HexxitGearConfig.registerDimBlacklist();
 
         logger = evt.getModLog();
@@ -124,7 +123,7 @@ public class HexxitGear {
         hexicalDiamond = new ItemHexicalDiamond(HexxitGearConfig.hexicalDiamond.getInt());
 
         GameRegistry.registerBlock(hexbiscus, hexbiscus.getUnlocalizedName());
-        LangReg.langReg();
+
         GameRegistry.registerWorldGenerator(new HGWorldGen());
 
         proxy.init();

@@ -97,7 +97,7 @@ public class HexxitGearConfig {
                 + HexxitGear.modId + "/");
     }
 
- /*   public static void extractLang(String[] languages)
+    public static void extractLang(String[] languages)
     {
         String langResourceBase = "/sct/" + HexxitGear.modId + "/lang/";
         for (String lang : languages)
@@ -126,7 +126,7 @@ public class HexxitGearConfig {
             }
         }
     }
-*/
+
     public static void loadLang()
     {
         File f = new File(configFolder.getAbsolutePath() + "/lang/");
