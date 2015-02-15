@@ -18,28 +18,31 @@
 
 package sct.hexxitgear.block;
 
+import java.util.Random;
+
 import net.minecraft.block.BlockFlower;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.Item;
 import sct.hexxitgear.HexxitGear;
 import sct.hexxitgear.gui.HGCreativeTab;
-
-import java.util.Random;
 
 public class BlockHexbiscus extends BlockFlower {
 
     public BlockHexbiscus(int id) {
         super(id);
         setCreativeTab(HGCreativeTab.tab);
-        setUnlocalizedName("hexxitgear.flora.hexbiscus");
+    //    setUnlocalizedName("hexxitgear.flora.hexbiscus");
+        setBlockTextureName("hexxitgear.flora.hexbiscus");
+     //   setBlockName("hexibiscus");
     }
 
     @Override
-    public void registerIcons(IconRegister ir) {
+    public void registerBlockIcons(IIconRegister ir) {
         blockIcon = ir.registerIcon(getUnlocalizedName());
     }
 
     @Override
-    public int idDropped(int par1, Random par2Random, int par3) {
-        return HexxitGear.hexicalEssence.itemID;
+    public int damageDropped(int par1) {
+        return Item.getIdFromItem(HexxitGear.hexicalEssence);
     }
 }

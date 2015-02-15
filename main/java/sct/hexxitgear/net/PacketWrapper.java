@@ -18,14 +18,6 @@
 
 package sct.hexxitgear.net;
 
-import net.minecraft.network.packet.Packet250CustomPayload;
-
-import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class PacketWrapper {
     /**
@@ -35,7 +27,7 @@ public class PacketWrapper {
      * @param packetID Integer value to be prefixed to the data array so you can distinguish packets
      * @param input Object Array to be encoded to the packet byte array.
      */
-    public static Packet250CustomPayload createPacket(String channel, int packetID, Object[] input)
+  /*  public static Packet250CustomPayload createPacket(String channel, int packetID, Object[] input)
     {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         DataOutputStream data = new DataOutputStream(bytes);
@@ -71,7 +63,7 @@ public class PacketWrapper {
      * @param data byte array input
      * @param packetDataTypes array of class types to decode the byte array as
      */
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+/*    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static Object[] readPacketData(DataInputStream data, Class[] packetDataTypes)
     {
         List result = new ArrayList<Object>();
@@ -184,4 +176,5 @@ public class PacketWrapper {
 
         return result;
     }
+*/
 }

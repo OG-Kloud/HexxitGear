@@ -18,21 +18,26 @@
 
 package sct.hexxitgear.item;
 
-import net.minecraft.entity.EntityLiving;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.common.ISpecialArmor;
-import sct.hexxitgear.gui.HGCreativeTab;
+import sct.hexxitgear.HexxitGear;
 
 public class ItemHexxitArmor extends ItemArmor implements ISpecialArmor {
 
-    public ItemHexxitArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
-        super(par1, par2EnumArmorMaterial, par3, par4);
-        setCreativeTab(HGCreativeTab.tab);
+	public String textureName;
+	
+    public ItemHexxitArmor(String unlocalizedName, ArmorMaterial material, String textureName, int type) {
+        super(material, 0, type);
+        this.textureName = textureName;
+        this.setUnlocalizedName(unlocalizedName);
+        this.setTextureName(HexxitGear.modid + ":" + unlocalizedName);
+        this.setCreativeTab(CreativeTabs.tabCombat);
     }
 
  /*  @Override
@@ -43,6 +48,12 @@ public class ItemHexxitArmor extends ItemArmor implements ISpecialArmor {
     @Override
     public int getArmorDisplay(EntityPlayer player, ItemStack armor, int slot) {
         return damageReduceAmount;
+    }
+    
+    @Override
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
+    {
+        return HexxitGear.modid + ":armor/" + this.textureName + "_" + (this.armorType == 2 ? "2" : "1") + ".png";
     }
 /*
     @Override
@@ -72,5 +83,10 @@ public class ItemHexxitArmor extends ItemArmor implements ISpecialArmor {
 	public ArmorProperties getProperties(EntityLivingBase player,
 			ItemStack armor, DamageSource source, double damage, int slot) {
 		return new ArmorProperties(1, damageReduceAmount / 22D, armor.getMaxDamage() + 1);
+	}
+	
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
+
+		return HexxitGear.modid + ":armor/" + this.textureName + "_" + (this.armorType == 2 ? "2" : "1") + ".png";
 	}
 }

@@ -18,14 +18,12 @@
 
 package sct.hexxitgear;
 
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.client.registry.KeyBindingRegistry;
-import cpw.mods.fml.client.registry.RenderingRegistry;
-import cpw.mods.fml.common.registry.TickRegistry;
-import cpw.mods.fml.relauncher.Side;
 import net.minecraft.entity.player.EntityPlayer;
 import sct.hexxitgear.control.HGKeyHandler;
 import sct.hexxitgear.tick.PlayerTickHandler;
+import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 public class ClientProxy extends CommonProxy {
 
@@ -38,17 +36,16 @@ public class ClientProxy extends CommonProxy {
     public EntityPlayer findPlayer(String playerName) {
         for (Object a : FMLClientHandler.instance().getClient().theWorld.playerEntities) {
             EntityPlayer player = (EntityPlayer) a;
-            if (player.username.toLowerCase().equals(playerName.toLowerCase())) {
+      //      if (player.username.toLowerCase().equals(playerName.toLowerCase())) {
                 return player;
             }
-        }
         return null;
     }
 
     @Override
     public void registerHandlers() {
         super.registerHandlers();
-        TickRegistry.registerTickHandler(new PlayerTickHandler(), Side.CLIENT);
-        KeyBindingRegistry.registerKeyBinding(new HGKeyHandler());
+   //     TickRegistry.registerTickHandler(new PlayerTickHandler(), Side.CLIENT);
+    //    KeyBindingRegistry.registerKeyBinding(new HGKeyHandler());
     }
 }

@@ -18,6 +18,12 @@
 
 package sct.hexxitgear.core;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import sct.hexxitgear.HexxitGear;
@@ -29,8 +35,6 @@ import sct.hexxitgear.core.buff.BuffScaleSet;
 import sct.hexxitgear.core.buff.BuffThiefSet;
 import sct.hexxitgear.core.buff.BuffTribalSet;
 import sct.hexxitgear.core.buff.IBuffHandler;
-
-import java.util.*;
 
 public class ArmorSet {
 
@@ -72,16 +76,16 @@ public class ArmorSet {
                 }
             }
             if (matched == 4) {
-                if (getPlayerArmorSet(player.username) == null || !getPlayerArmorSet(player.username).equals(armorSet)) {
-                    addPlayerArmorSet(player.username, armorSet);
+                if (getPlayerArmorSet(player.getDisplayName()) == null || !getPlayerArmorSet(player.getDisplayName()).equals(armorSet)) {
+                    addPlayerArmorSet(player.getDisplayName(), armorSet);
                 }
                 foundMatch = true;
             }
         }
 
-        if (!foundMatch && getPlayerArmorSet(player.username) != null) {
-            ArmorSet as = getPlayerArmorSet(player.username);
-            removePlayerArmorSet(player.username);
+        if (!foundMatch && getPlayerArmorSet(player.getDisplayName()) != null) {
+            ArmorSet as = getPlayerArmorSet(player.getDisplayName());
+            removePlayerArmorSet(player.getDisplayName());
             as.removeBuffs(player);
         }
     }

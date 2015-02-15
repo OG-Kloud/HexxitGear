@@ -18,20 +18,13 @@
 
 package sct.hexxitgear.event;
 
-import cpw.mods.fml.client.FMLClientHandler;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingEvent;
-import sct.hexxitgear.HexxitGear;
-import sct.hexxitgear.core.CapeHandler;
-
-import java.util.logging.Level;
 
 public class PlayerEventHandler {
 
     private int ticks = 0;
 
-    @ForgeSubscribe
     public void playerUpdate(LivingEvent.LivingUpdateEvent event) {
         if (ticks > 16) {
             if (event.entityLiving != null && event.entityLiving instanceof EntityPlayer) {

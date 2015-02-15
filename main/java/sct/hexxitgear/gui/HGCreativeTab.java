@@ -18,11 +18,12 @@
 
 package sct.hexxitgear.gui;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import sct.hexxitgear.HexxitGear;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class HGCreativeTab extends CreativeTabs {
 
@@ -42,4 +43,9 @@ public class HGCreativeTab extends CreativeTabs {
     public String getTranslatedTabLabel() {
         return this.getTabLabel();
     }
+
+	@Override
+	public Item getTabIconItem() {
+		return HexxitGear.tribalHelmet;
+	}
 }

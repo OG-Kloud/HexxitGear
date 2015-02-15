@@ -18,13 +18,10 @@
 
 package sct.hexxitgear.tick;
 
-import cpw.mods.fml.common.IPlayerTracker;
-import net.minecraft.entity.player.EntityPlayer;
-import sct.hexxitgear.core.ArmorSet;
-import sct.hexxitgear.core.CapeHandler;
 
-public class PlayerTracker implements IPlayerTracker {
+public class PlayerTracker/* implements IPlayerTracker */ {
 
+	/*
     public static PlayerTracker instance = new PlayerTracker();
 
     @Override
@@ -45,4 +42,5 @@ public class PlayerTracker implements IPlayerTracker {
     @Override
     public void onPlayerRespawn(EntityPlayer player) {
     }
+    */
 }

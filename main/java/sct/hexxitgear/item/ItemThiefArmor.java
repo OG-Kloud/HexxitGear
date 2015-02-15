@@ -18,40 +18,34 @@
 
 package sct.hexxitgear.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.List;
+
 import net.minecraft.client.model.ModelBiped;
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumArmorMaterial;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
-import net.minecraft.util.DamageSource;
-import net.minecraftforge.common.ISpecialArmor;
 import sct.hexxitgear.HexxitGear;
-import sct.hexxitgear.gui.HGCreativeTab;
 import sct.hexxitgear.model.ModelHoodHelmet;
 import sct.hexxitgear.util.FormatCodes;
-
-import java.util.List;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemThiefArmor extends ItemHexxitArmor {
 
-    public ItemThiefArmor(int id, int renderIndex, int slot) {
-        super(id, EnumArmorMaterial.DIAMOND, renderIndex, slot);
+    public ItemThiefArmor(String unlocalizedName, String textureName, int type) {
+        super(unlocalizedName, ArmorMaterial.DIAMOND, textureName, type);
     }
 
     @Override
-    public void registerIcons(IconRegister ir) {
+    public void registerIcons(IIconRegister ir) {
         itemIcon = ir.registerIcon(getUnlocalizedName());
     }
 
     @Override
-    public String getArmorTexture(ItemStack stack, Entity entity, int slot,
-                                  int layer) {
+    public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
         if (entity instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) entity;
             if (player.isPotionActive(Potion.invisibility))
@@ -62,7 +56,7 @@ public class ItemThiefArmor extends ItemHexxitArmor {
         if (slot == 0)
             return "/textures/maps/HoodHelmet.png";
 
-        if (stack.itemID == HexxitGear.thiefLeggings.itemID)
+        if (stack == new ItemStack(HexxitGear.thiefLeggings))
             return "/textures/armor/thief2.png";
 
         return "/textures/armor/thief.png";

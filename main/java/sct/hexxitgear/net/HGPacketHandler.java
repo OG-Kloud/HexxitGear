@@ -18,18 +18,9 @@
 
 package sct.hexxitgear.net;
 
-import cpw.mods.fml.common.network.IPacketHandler;
-import cpw.mods.fml.common.network.Player;
-import net.minecraft.network.INetworkManager;
-import net.minecraft.network.packet.Packet250CustomPayload;
-import sct.hexxitgear.core.ability.AbilityHandler;
-import sct.hexxitgear.core.CapeHandler;
 
-import java.io.ByteArrayInputStream;
-import java.io.DataInputStream;
-
-public class HGPacketHandler implements IPacketHandler {
-    @SuppressWarnings("rawtypes")
+public class HGPacketHandler /* implements IPacketHandler */{
+/*    @SuppressWarnings("rawtypes")
     @Override
     public void onPacketData(INetworkManager manager,
                              Packet250CustomPayload packet, Player player) {
@@ -43,7 +34,7 @@ public class HGPacketHandler implements IPacketHandler {
      /*       CapeHandler.readCapeUpdate((String)packetReadout[0], (String)packetReadout[1]);
         } else if (packetType == Packets.CapeJoin) {
             CapeHandler.readJoinUpdate(data); */
-        } else if (packetType == Packets.armorAbility) {
+  /*      } else if (packetType == Packets.armorAbility) {
             Class[] decodeAs = { String.class };
             Object[] packetReadout = PacketWrapper.readPacketData(data, decodeAs);
 
@@ -51,4 +42,5 @@ public class HGPacketHandler implements IPacketHandler {
         }
 
     }
+*/
 }

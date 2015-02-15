@@ -18,25 +18,24 @@
 
 package sct.hexxitgear.control;
 
-import cpw.mods.fml.client.registry.KeyBindingRegistry;
-import cpw.mods.fml.common.TickType;
-import cpw.mods.fml.common.network.PacketDispatcher;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.EnumSet;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityClientPlayerMP;
 import net.minecraft.client.settings.KeyBinding;
+
 import org.lwjgl.input.Keyboard;
+
 import sct.hexxitgear.HexxitGear;
 import sct.hexxitgear.core.ArmorSet;
 import sct.hexxitgear.net.PacketWrapper;
 import sct.hexxitgear.net.Packets;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
-import java.util.EnumSet;
-
-@SideOnly(Side.CLIENT)
-public class HGKeyHandler extends KeyBindingRegistry.KeyHandler {
-
+//@SideOnly(Side.CLIENT)
+public class HGKeyHandler /*extends KeyBindingRegistry.KeyHandler */ {
+/*
     public static KeyBinding activateHexxitArmor = new KeyBinding("Activate Hexxit Gear Armor", Keyboard.KEY_X);
     public static KeyBinding[] keybindArray = new KeyBinding[]{activateHexxitArmor};
     public static boolean[] repeats = new boolean[keybindArray.length];
@@ -75,4 +74,5 @@ public class HGKeyHandler extends KeyBindingRegistry.KeyHandler {
     public String getLabel() {
         return "hexxitGearKeybinds";
     }
+    */
 }

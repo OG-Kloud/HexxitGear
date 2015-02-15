@@ -18,12 +18,9 @@
 
 package sct.hexxitgear;
 
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.TickRegistry;
-import cpw.mods.fml.relauncher.Side;
 import net.minecraft.entity.player.EntityPlayer;
 import sct.hexxitgear.tick.PlayerTickHandler;
+import cpw.mods.fml.relauncher.Side;
 
 public class CommonProxy {
 
@@ -40,6 +37,6 @@ public class CommonProxy {
     }
 
     public void registerHandlers() {
-        TickRegistry.registerTickHandler(new PlayerTickHandler(), Side.SERVER);
+ //       TickRegistry.registerTickHandler(new PlayerTickHandler(), Side.SERVER);
     }
 }

@@ -18,20 +18,20 @@
 
 package sct.hexxitgear.item;
 
-import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import sct.hexxitgear.gui.HGCreativeTab;
 
 public class ItemHexicalDiamond extends Item {
 
     public ItemHexicalDiamond(int id) {
-        super(id);
+        super();
         setCreativeTab(HGCreativeTab.tab);
         setUnlocalizedName("hexxitgear.hexicaldiamond");
     }
 
     @Override
-    public void registerIcons(IconRegister ir) {
+    public void registerIcons(IIconRegister ir) {
         itemIcon = ir.registerIcon(getUnlocalizedName());
     }
 }

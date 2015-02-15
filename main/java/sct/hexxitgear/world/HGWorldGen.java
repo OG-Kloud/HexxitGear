@@ -18,13 +18,13 @@
 
 package sct.hexxitgear.world;
 
-import cpw.mods.fml.common.IWorldGenerator;
-import net.minecraft.block.Block;
+import java.util.Random;
+
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import sct.hexxitgear.HexxitGear;
-
-import java.util.Random;
+import cpw.mods.fml.common.IWorldGenerator;
 
 public class HGWorldGen implements IWorldGenerator {
 
@@ -50,11 +50,11 @@ public class HGWorldGen implements IWorldGenerator {
             int z = startZ + random.nextInt(8) - random.nextInt(8);
             int y = world.getHeightValue(x, z);
 
-            if ((world.isAirBlock(x, y, z) || (world.getBlockId(x,y,z) == Block.snow.blockID)) && HexxitGear.hexbiscus.canBlockStay(world, x, y, z)) {
+            if ((world.isAirBlock(x, y, z) || (world.getBlock(x,y,z) == Blocks.snow)) && HexxitGear.hexbiscus.canBlockStay(world, x, y, z)) {
                 if (random.nextInt(50) > 1)
                     continue;
 
-                world.setBlock(x, y, z, HexxitGear.hexbiscus.blockID, 0, 0);
+                world.setBlock(x, y, z, HexxitGear.hexbiscus, 0, 0);
             }
         }
     }

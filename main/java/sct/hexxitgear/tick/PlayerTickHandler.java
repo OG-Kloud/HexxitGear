@@ -18,16 +18,10 @@
 
 package sct.hexxitgear.tick;
 
-import cpw.mods.fml.common.ITickHandler;
-import cpw.mods.fml.common.TickType;
-import net.minecraft.entity.player.EntityPlayer;
-import sct.hexxitgear.core.ability.AbilityHandler;
-import sct.hexxitgear.core.ArmorSet;
 
-import java.util.EnumSet;
+public class PlayerTickHandler/* implements ITickHandler */{
 
-public class PlayerTickHandler implements ITickHandler {
-
+	/*
     private int tickCounter = 0;
 
     @Override
@@ -70,4 +64,5 @@ public class PlayerTickHandler implements ITickHandler {
     public String getLabel() {
         return "HGPlayerTicks";
     }
+    */
 }
